@@ -80,7 +80,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'wfm_db',
         'USER':'postgres',
-        'PASSWORD':'@Bcd1234',
+        'PASSWORD':'abcd1234',
         'HOST':'localhost',
         'PORT': '5432'
     }
