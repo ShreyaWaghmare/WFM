@@ -1,0 +1,46 @@
+
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+
+<main role="main">
+<div class="pt-3">
+  <section class="jumbotron text-center pt-3 grad">
+    <div class="container">
+      <h1 class="text-white">Hi! I am Shreya</h1>
+      <p class="lead text-white">I love to code and blog!!</p>
+      <p>
+        <!--<a href="mailto:waghmare2shreya@gmail.com" class="btn btn-primary my-2">Email Me</a>-->
+        
+      </p>
+      <!--<img src="{% static '20200919_120410.jpg' %}" height=200 width=200/>-->
+    </div>
+  </section>
+</div>
+  <!--
+  <div class="album py-5 bg-light">
+    <div class="container">
+      <div class="row">
+      
+        {%  for job in jobs.all %}
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <img class="card-img-top" src="{{ job.image.url }}" />
+            <div class="card-body">
+              <p class="card-text">{{ job.summary }}</p>   
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+        
+      </div>
+    </div>
+  </div>
+  -->
+
+</main>
+
+{% endblock %}

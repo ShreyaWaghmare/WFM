@@ -1,0 +1,38 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+<main role="main" class="container">
+  <div class="row">
+    <!--<div class="col-md-8 blog-main">-->
+      
+
+      <div class="blog-post">
+        <h2 class="blog-post-title">{{ detailpost.title }}</h2>
+        <p class="blog-post-meta">{{ detailpost.pub_date.date }}</p>
+        <img src="{{detailpost.image.url}}" class="pt-1 pb-3 pr-3 rounded center img-fluid max-width: 100% height: auto">
+        <p>
+        {{ detailpost.body }}
+        </p>
+      </div><!-- /.blog-post -->
+</div>
+<hr>
+<h2 class="blog-post-title">More Posts</h2>
+<div class="card-columns">
+{% for post in post_per_cat%}
+  <div class="card ">
+    <img src="{{post.image.url}}" class="card-img-top" alt="...">
+    <div class="card-header text-uppercase text-white font-weight-bold font-italic grad">{{ post.category }}</div>
+    <div class="card-body">
+      <h5 class="card-title">{{ post.title }}</h5>
+      <p class="card-text"><small class="text-muted">{{ post.pub_date.date }}</small></p>
+      <p class="card-text">{{ post.summary }}</p>
+      <a href="{% url 'detail' post.id %}" class="btn btn-primary">Continue reading</a>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+</main>
+{% endblock %}
+      

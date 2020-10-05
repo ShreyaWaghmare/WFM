@@ -1,0 +1,41 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<div class="pt-3">
+<div class="jumbotron grad text-white">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <h1 class="display-4 font-italic  font-weight-bold">{{ feature_post.title }}</h1>
+      <p><small>{{ feature_post.pub_date.date }}</small></p>
+      <p class="lead my-3">{{ feature_post.summary }}</p>
+      <p class="lead mb-0"><a href="{% url 'detail' feature_post.id %}" class="btn btn-primary">Continue reading...</a></p>
+            </div>
+            <div class="col-lg-6">
+                <img src="{{feature_post.image.url}}" class="card-img-top"/>
+            </div>
+        </div>
+      </div>
+</div>
+</div>
+
+<div class="card-columns">
+{% for post in cat_based_posts%}
+  <div class="card">
+    <img src="{{post.image.url}}" class="card-img-top" alt="...">
+    <div class="card-header text-uppercase text-white font-weight-bold font-italic grad">{{ post.category }}</div>
+    <div class="card-body">
+      <h5 class="card-title">{{ post.title }}</h5>
+      <p class="card-text"><small class="text-muted">{{ post.pub_date.date }}</small></p>
+      <p class="card-text">{{ post.summary }}</p>
+      <a href="{% url 'detail' post.id %}" class="btn btn-primary">Continue reading</a>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+
+{% endblock %}
