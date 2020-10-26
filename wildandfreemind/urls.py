@@ -21,7 +21,7 @@ from django.conf.urls.static import static
 import posts.views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('WFMPostfeeder/', admin.site.urls),
     path('', posts.views.allposts,name='home'),
     path('about/', posts.views.about,name='about'),
     path('<str:cat>/',posts.views.return_cat_based_posts,name='cat'),

@@ -3,20 +3,23 @@
 
 {% block content %}
 
-<main role="main" class="container">
+<main role="main" class="container bg-light">
   <div class="row">
     <!--<div class="col-md-8 blog-main">-->
       
 
       <div class="blog-post">
-        <h2 class="blog-post-title">{{ detailpost.title }}</h2>
-        <p class="blog-post-meta">{{ detailpost.pub_date.date }}</p>
-        <img src="{{detailpost.image.url}}" class="pt-1 pb-3 pr-3 rounded center img-fluid max-width: 100% height: auto">
-        <p>
-        {{ detailpost.body }}
+        <h2 class="blog-post-title font-italic">{{ detailpost.title }}</h2>
+        <p class="blog-post-meta font-italic">{{ detailpost.pub_date.date }}</p>
+        <img src="{{detailpost.image.url}}" class="p-3 rounded float-right img-fluid max-width: 100% height: auto">
+        <p class="text-justify">
+        {% autoescape off %}{{ detailpost.body }}{% endautoescape %}
         </p>
       </div><!-- /.blog-post -->
 </div>
+
+
+</main>
 <hr>
 <h2 class="blog-post-title">More Posts</h2>
 <div class="card-columns">
@@ -33,6 +36,5 @@
   </div>
   {% endfor %}
 </div>
-</main>
 {% endblock %}
       
